@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="navbar lg:w-[1270px] py-0 px-[10px] bg-base-100 border-2">
+    <div className="navbar lg:w-[1270px] py-0 px-[10px] bg-base-100 ">
       <div className="py-3 px-4 flex-1">
         <a className="btn rounded-none bg-[#D63415] text-xl font-sans font-semibold text-white">
           LOGO

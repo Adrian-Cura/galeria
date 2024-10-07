@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Galeria from "@/components/Galeria";
 
 export default function Home() {
   return (
@@ -6,6 +7,9 @@ export default function Home() {
       <main>
         <div className="flex justify-center">
           <Header />
+        </div>
+        <div>
+          <Galeria />
         </div>
       </main>
     </div>
