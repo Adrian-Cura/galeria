@@ -4,10 +4,13 @@ import Layout4 from "./svg/Layout4";
 import Layout3 from "./svg/Layout3";
 import Layout2 from "./svg/Layout2";
 import Layout1 from "./svg/Layout1";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { fotosProps } from "@/utils/galeriaData";
+import waterMark from "@/assets/galeria/watermark.png";
+import Carrito from "./svg/Carrito";
 
 interface componentProps {
-  fotosGaleria: StaticImageData[];
+  fotosGaleria: fotosProps[];
 }
 
 const GaleriaLayout = ({ fotosGaleria }: componentProps) => {
@@ -64,18 +67,31 @@ const GaleriaLayout = ({ fotosGaleria }: componentProps) => {
         </div>
       </div>
       <div className="w-[1140px] mt-10 flex justify-center">
-        <div className={`grid ${getGridClass()} grid-cols-4 gap-6`}>
+        <div className={`grid ${getGridClass()}  gap-6`}>
           {fotosGaleria.map((foto, index) => (
             <div
               key={index}
-              className="h-[267px] w-[267px] overflow-hidden relative "
+              className="h-[267px] w-[267px] overflow-hidden relative border-2 border-white "
             >
               <Image
                 alt="foto galeria"
-                src={foto}
+                src={foto.foto}
                 layout="fill"
-                className="object-cover"
+                className="object-cover rounded-md"
               />
+              {!foto.adquirida && (
+                <div>
+                  <Image
+                    alt="water mark"
+                    src={waterMark}
+                    layout="fill"
+                    className="object-cover rounded-md opacity-30 absolute top-0 left-0"
+                  />
+                  <div className="absolute top-2 right-5 border p-1 rounded-sm">
+                    <Carrito />
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

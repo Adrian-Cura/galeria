@@ -6,7 +6,7 @@ const Header = () => {
     <div className="flex justify-center font-roboto text-[#8B92A2] ">
       <div className="navbar lg:w-[1270px] py-0 px-[10px] bg-base-100 ">
         <div className="py-3 px-4 flex-1">
-          <a className="btn rounded-none bg-[#D63415] text-xl font-sans font-semibold text-white hover:bg-red-700">
+          <a className="btn rounded-none bg-[#EC3F1E] text-xl font-sans font-semibold text-white hover:bg-red-700">
             LOGO
           </a>
         </div>

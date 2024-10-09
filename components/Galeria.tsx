@@ -63,7 +63,7 @@ const Galeria = () => {
           <Estrella />
           Calificar
         </button>
-        <button className=" font-light  text-white px-3 py-[6px] flex gap-1 items-center bg-[#D63415] border-[1px] rounded-md border-[#F8F9FA] h-[38px] w-[184px] justify-center hover:bg-red-700 ">
+        <button className=" font-light  text-white px-3 py-[6px] flex gap-1 items-center bg-[#EC3F1E] border-[1px] rounded-md border-[#D63415] h-[38px] w-[184px] justify-center hover:bg-red-700 ">
           <Carrito /> Agregar todo
         </button>
       </div>
