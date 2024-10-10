@@ -1,30 +1,37 @@
 import Image from "next/image";
 import React from "react";
+import Hamburguer from "@/components/svg/Hamburger";
+
+{
+  /* Toda la web es responsive utilizando clases tablet y desktop, estas clases son personalizadas creadas en el archivo tailwind.config para cumplir con los pixeles recomendados en las instrucciones  */
+}
 
 const Header = () => {
   return (
-    <div className="flex justify-center font-roboto text-[#8B92A2] ">
-      <div className="navbar lg:w-[1270px] py-0 px-[10px] bg-base-100 ">
-        <div className="py-3 px-4 flex-1">
-          <a className="btn rounded-none bg-[#EC3F1E] text-xl font-sans font-semibold text-white hover:bg-red-700">
+    <div className="flex  justify-center font-roboto text-[#8B92A2] w-full ">
+      <div className="navbar desktop:px-[10px] bg-base-100 w-full tablet:w-[780px] desktop:w-[1270px]">
+        <div className="py-3 desktop:px-4 flex-1">
+          <a className="btn rounded-none  w-[116px] tablet:w-auto bg-[#EC3F1E] text-xl font-sans font-semibold text-white hover:bg-red-700">
             LOGO
           </a>
         </div>
         <div>
-          <ul className="menu menu-horizontal px-1 flex items-center text-base ">
-            <li className="hover:text-gray-600">
+          <ul className="menu menu-horizontal px-1 flex items-center text-base">
+            <li className="hover:text-gray-600 hidden tablet:list-item">
               <a>Inicio</a>
             </li>
-            <li className="hover:text-gray-600">
+            <li className="hover:text-gray-600 hidden tablet:list-item">
               <a>Quienes somos?</a>
             </li>
-            <li className="hover:text-gray-600">
+            <li className="hover:text-gray-600 hidden tablet:list-item">
               <a>Ayuda</a>
             </li>
-            <li className="hover:text-gray-600">
+            <li className="hover:text-gray-600 hidden tablet:list-item">
               <a>Mis compras</a>
             </li>
-
+            <div className="tablet:hidden">
+              <Hamburguer />
+            </div>
             {/* Avatar  */}
             <li>
               <details>
@@ -35,7 +42,7 @@ const Header = () => {
                       role="button"
                       className="btn btn-ghost btn-circle avatar"
                     >
-                      <div className="w-10 h-10 rounded-full">
+                      <div className="w-[38px] h-[38px] tablet:w-10 tablet:h-10 rounded-full">
                         <Image
                           width={40} // Aumenta el tamaño para que sea consistente
                           height={40}
@@ -44,7 +51,7 @@ const Header = () => {
                         />
                       </div>
                     </div>
-                    <span>Delfina</span>
+                    <span className="hidden tablet:inline-block">Delfina</span>
                   </div>
                 </summary>
                 <ul className="bg-base-100 rounded-t-none p-2 z-10">
@@ -60,7 +67,7 @@ const Header = () => {
 
             {/* CARRITO DE COMPRAS */}
             <li>
-              <div className="dropdown dropdown-end">
+              <div className="dropdown px-0 tablet:px-2 dropdown-end">
                 <div
                   tabIndex={0}
                   role="button"

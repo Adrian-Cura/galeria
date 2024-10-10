@@ -10,6 +10,10 @@ const config: Config = {
     themes: ["light"],
   },
   theme: {
+    screens: {
+      tablet: "768px",
+      desktop: "1200px",
+    },
     extend: {
       fontFamily: {
         roboto: ["var(--font-roboto)"],

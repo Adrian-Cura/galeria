@@ -1,12 +1,24 @@
 import Image from "next/image";
+{
+  /* Se importa los tipos de datos  */
+}
 import { fotografosProps } from "@/utils/fotografosData";
 import Centro from "./svg/Centro";
 import Estrellitas from "./svg/Estrellitas";
 import Ojo from "./svg/Ojo";
 import Raiting from "./Raiting";
 
+{
+  /* Con la interface me aseguro de tipar correctamente el componente  */
+}
+
 interface FotografosProps {
   fotografosData: fotografosProps[];
+}
+
+{
+  /* Utilizo clases de Tailwind pero tambien de DaisyUI que son clases especiales, por ejemplo la clase card, 
+  se copia y pega el componente de DaisyUI y despues se modifica a gusto porque esta construido sobre Tailwind y html puro*/
 }
 
 const FotografosCards = ({ fotografosData }: FotografosProps) => {
@@ -15,7 +27,7 @@ const FotografosCards = ({ fotografosData }: FotografosProps) => {
       {fotografosData.map((fotografo, index) => (
         <div
           key={index}
-          className="card bg-base-100 w-[270px] shadow-xl py-6 px-2 max-h-[292px]"
+          className="card bg-base-100 w-[270px] shadow-xl py-6 px-2 max-h-[292px] cursor-pointer"
         >
           <div className="avatar flex justify-center">
             <div className="ring-2 ring-white w-[80px] h-[80px] rounded-full  ">

@@ -11,10 +11,11 @@ import GaleriaLayout from "./GaleriaLayout";
 import fotosGaleria from "@/utils/galeriaData";
 import FotografosCards from "./FotografosCards";
 import fotografosData from "@/utils/fotografosData";
+import Carousel from "./Carousel";
 
 const Galeria = () => {
   return (
-    <div className="bg-[#F8F9FA] ">
+    <div className="bg-[#F8F9FA] w-full ">
       <div className="mx-40 pt-4 mb-6 ">
         <p className="flex gap-1 items-center">
           <Albumes />
@@ -27,21 +28,24 @@ const Galeria = () => {
           15/06/2024
         </p>
       </div>
-      <div className="flex justify-center relative mx-2">
-        <div className=" overflow-hidden h-[158px] w-full justify-center">
-          <Image
-            alt="Imagen de portada"
-            src={portada}
-            layout="fill"
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="avatar absolute top-[70%]">
-          <div className="ring-2 ring-white w-24 rounded-full  ">
-            <Image alt="avatar picture" src={avatar} />
+      <div className="max-w-[1480px] mx-auto ">
+        <div className="flex justify-center relative ">
+          <div className=" overflow-hidden h-[158px] max-w-[96%]  ">
+            <Image
+              alt="Imagen de portada"
+              src={portada}
+              layout="fill"
+              className="object-cover object-center "
+            />
+          </div>
+          <div className="avatar absolute top-[70%]">
+            <div className="ring-2 ring-white w-24 rounded-full  ">
+              <Image alt="avatar picture" src={avatar} />
+            </div>
           </div>
         </div>
       </div>
+
       <div className="flex justify-center mt-16 ">
         <h4 className="font-semibold  text-2xl">Expo mascotas 2024</h4>
       </div>
@@ -67,15 +71,24 @@ const Galeria = () => {
           <Carrito /> Agregar todo
         </button>
       </div>
-      <GaleriaLayout fotosGaleria={fotosGaleria} />
-
-      <div className="flex justify-center mt-24 w-1/2 ">
-        <h2 className="text-3xl text-[#363E4E] font-medium ">
+      <div>
+        <GaleriaLayout fotosGaleria={fotosGaleria} />
+      </div>
+      <div className="flex justify-center mt-24 desktop:w-1/2 ">
+        <h2 className="text-3xl text-[#363E4E] font-medium justify-center  desktop:justify-normal ">
           Fotógrafos destacados
         </h2>
       </div>
-      <div className="flex justify-center mt-10">
+
+      {/* Dependiendo del tamaño de miagen se muestra los fotografos todos juntos o en un Carousel  */}
+
+      {/* Se envia al componente FotografosCards un array con la informacion de cada fotografo y lo mismo para el Carousel  */}
+      <div className="hidden tablet:flex justify-center mt-10 ">
         <FotografosCards fotografosData={fotografosData} />
+      </div>
+
+      <div className="tablet:hidden justify-center mt-10 ">
+        <Carousel fotografosData={fotografosData} />
       </div>
     </div>
   );
